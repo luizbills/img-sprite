@@ -1,0 +1,15 @@
+{
+    "name": "img-sprite-element",
+    "version": "0.1.0",
+    "description": "CSS Sprite Web Component",
+    "author": "Luiz \"Bills\"",
+    "homepage": "https://github.com/",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/luizbills/img-sprite"
+    },
+    "bugs": {
+        "url": "https://github.com/luizbills/img-sprite/issues"
+    }
+}

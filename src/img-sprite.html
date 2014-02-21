@@ -1,0 +1,47 @@
+<polymer-element name="img-sprite" attributes="src width height frame">
+
+    <template>
+        <div id='sprite'></div>
+    </template>
+
+    <script>
+        Polymer('img-sprite', {
+            width: 1,
+            height: 1,
+            frame: 0,
+
+            ready: function() {
+                var self = this,
+                    style = this.$.sprite.style,
+                    image = new Image(),
+                    frame = this.frame,
+                    frameWidth = this.width,
+                    frameHeight = this.height;
+
+                image.onload = function() {
+                    var imgWidth = this.width,
+                        imgHeight = this.height,
+                        cols = imgWidth / frameWidth,
+                        rows = imgHeight / frameHeight,
+                        x = -1 * frameWidth * (frame % cols),
+                        y = -1 * frameHeight * (~~(frame / cols) % 2);
+
+                    style.background = "url('" + self.src + "') no-repeat";
+                    style.backgroundPosition = x + "px " + y + "px";
+                    style.width = self.width + "px";
+                    style.height = self.height + "px";
+                    /*
+                    style['background'] = "url('" + self.src + "') no-repeat";
+                    style['background-position'] = x + "px " + y + "px";
+                    style['width'] = self.width + "px";
+                    style['height'] = self.height + "px";
+                    */
+                }
+
+                image.src = this.src;
+
+            }
+        });
+    </script>
+
+</polymer-element>

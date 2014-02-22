@@ -24,7 +24,7 @@
                         cols = imgWidth / frameWidth,
                         rows = imgHeight / frameHeight,
                         x = -1 * frameWidth * (frame % cols),
-                        y = -1 * frameHeight * (~~(frame / cols) % 2);
+                        y = -1 * frameHeight * (~~(frame / cols) % rows);
 
                     style.background = "url('" + self.src + "') no-repeat";
                     style.backgroundPosition = x + "px " + y + "px";
